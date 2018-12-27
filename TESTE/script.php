@@ -1,8 +1,4 @@
 <?
-
-
-
-
 require_once 'addregistro.class.php';
 
 if(isset($_POST['rotear']) == 'cadastrar'){

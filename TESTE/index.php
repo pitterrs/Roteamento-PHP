@@ -1,47 +1,20 @@
-<?php
-$msg = '';
-include("conect.php");
-if($_POST){
-
-	$nome  = $_POST['nome'];
-	$email  = $_POST['email'];
-	$login  = $_POST['login'];
-	$query = "INSERT INTO usuario (usuario, email, login) value ('$nome', '$email', '$login')";
-	
-	$q = mysqli_query($cn, $query);
-
-	if($q){
-		$msg = 'Usuário cadastrado com sucesso';
-	}else{
-		$msg = 'Ocorreu um erro ao cadastrar o usuário';
-	}
-
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Fila Teste</title>
+	<title>Sistema de Cadastro</title>
 </head>
 <body>
-	<?php if($msg): ?>
-	<p><?php echo $msg; ?></p>
-	<?php endif; ?>
-	<h3>Cadastro de Usuário</h3>
-	<div>
-		<form action="index.php" method="post">
-			<label>Nome:</label> 
-			<input type="text" name="nome" placeholder="Usuário"><br><br>
-			<label>E-mail:</label>
-			<input type="text" name="email" placeholder="E-mail"><br><br>
-			<label>login:</label>
-			<input type="text" name="login"><br><br>
-			<button type="submit" value="Cadastrar">Cadastrar</button>
-			<button><a href="exibir.php" style="text-decoration: none; color: #000;">Lista de Usuários</a></button>
-		</form>
-	</div>
 
+	<h2>Sistema de Cadastro 1.0</h2>
+	<div>
+		<h4>Sistema de cadastro de usuário</h4>
+		<button><a href="insertusuario.php" style="text-decoration: none; color: #000;">Cadastrar Usuários</a></button>
+	</div>
+	<div>
+		<h4>Sistema de castros de fornecedores</h4>
+		<button><a href="insertforn.php" style="text-decoration: none; color: #000;">Casdastrar Fornecedores</a></button>
+	</div>
 
 </body>
 </html>
