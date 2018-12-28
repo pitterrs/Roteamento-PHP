@@ -3,10 +3,10 @@ $msg = '';
 include("conect.php");
 if($_POST){
 
-	$nome  = $_POST['fornecedor'];
-	$telefone  = $_POST['forntel'];
-	$email  = $_POST['fornemail'];
-	$query = "INSERT INTO 'fornecedor' (fornecedor, forntel, fornemail) value ('$nome', '$telefone', '$email')";
+	$fornecedor  = $_POST['fornecedor'];
+	$forntel  = $_POST['forntel'];
+	$fornemail  = $_POST['fornemail'];
+	$query = "INSERT INTO fornecedor (fornecedor, forntel, fornemail) value ('$fornecedor', '$forntel', '$fornemail')";
 	
 	$q = mysqli_query($cn, $query);
 
@@ -32,13 +32,13 @@ if($_POST){
 	<div>
 		<form action="insertforn.php" method="post">
 			<label>Nome do Fornecedor:</label>
-			<input type="text" name="fornecedor" required><br><br>
+			<input type="text" name="fornecedor" placeholder="Nome do Fornecedor" required><br><br>
 			<label>Telefone:</label>
-			<input type="text" name="forntel" required><br><br>
+			<input type="text" name="forntel" placeholder="telefone do fornecedor" required><br><br>
 			<label>E-mail:</label>
-			<input type="text" name="fornemail" required><br><br>
+			<input type="text" name="fornemail" placeholder="E-mail do fornecedor" required><br><br>
 			<button type="submit" value="Cadastrar">Cadastrar</button>
-			<button><a href="exibir_forn.php" style="text-decoration: none; color: #000;">Lista de Fornecedores</a></button>
+			<button><a href="exibirfornecedor.php" style="text-decoration: none; color: #000;">Lista de Fornecedores</a></button>
 			<button><a href="index.php" style="text-decoration: none; color: #000;">Voltar</a></button>
 		</form>
 	</div>
